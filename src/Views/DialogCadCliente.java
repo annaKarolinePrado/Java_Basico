@@ -176,7 +176,7 @@ public class DialogCadCliente extends javax.swing.JDialog {
                     .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCadastrar)
                     .addComponent(btnMostrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -262,18 +262,25 @@ public class DialogCadCliente extends javax.swing.JDialog {
         Cliente cliente = new Cliente(id, nome, cpf, data_nasc, telefone, endereco, email);
         
         Dados.DadosCliente.getCliente().add(cliente);
+        textId.setText("");
+        textNome.setText("");
+        textCPF.setText("");
+        textDtNasc.setText("");
+        textTelefone.setText("");
+        textEmail.setText("");
+        textEndereco.setText("");
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         
         
-        /*areaTexto.setText("");
-        areaTexto.append("Código\tNome\tStatus\n");
+        areaTexto.setText("");
+        areaTexto.append("Código\tNome\t\tCPF\tTelefone\n");
         for (Cliente cliente : Dados.DadosCliente.getCliente()) {
             
-            areaTexto.append(cliente.getId() + "\t" + cliente.getNome() + "\t" + cliente.getData_nasc()+ "\n");
-        }*/
+            areaTexto.append(cliente.getId() +"\t"+ cliente.getNome() +"\t"+ cliente.getCpf() +"\t"+ cliente.getTelefone() + "\n");
+        }
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     /**

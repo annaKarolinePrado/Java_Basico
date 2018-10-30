@@ -5,9 +5,9 @@ public class Filme extends Padrao {
     private String descricao;
     private String data_lanc;
     private int quantidade;
-    private String categoria;
+    private Categoria categoria;
     
-    public Filme(int id, String nome, String descricao, String data_lanc, int quantidade, String categoria){
+    public Filme(int id, String nome, String descricao, String data_lanc, int quantidade, Categoria categoria){
         super (id, nome);
         this.setDescricao(descricao);
         this.setData_lanc(data_lanc);
@@ -36,10 +36,10 @@ public class Filme extends Padrao {
         this.quantidade = quantidade;
     }
     
-    public String getCategoria(){
+    public Categoria getCategoria(){
         return categoria;
     }
-    public void setCategoria(String categoria){
+    public void setCategoria(Categoria categoria){
         this.categoria = categoria;
     }
 }
