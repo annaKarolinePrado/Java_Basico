@@ -2,18 +2,28 @@
 package Model;
 
 public class Categoria extends Padrao {
-    private String status;
+    private boolean status;
     
-    public Categoria(int id, String nome, String status){
+    public Categoria(){
+        
+    }
+    
+    public Categoria(int id, String nome, boolean status){
         super(id, nome);
         this.setStatus(status);        
     }
     
-    public String getStatus(){
+    public boolean getStatus(){
         return status;
     }    
-    public void setStatus(String status){
+    public void setStatus(boolean status){
         this.status = status;
     } 
+
+    
+
+    
+    
+    
     
 }

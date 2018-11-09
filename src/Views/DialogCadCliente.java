@@ -260,8 +260,10 @@ public class DialogCadCliente extends javax.swing.JDialog {
         String email = textEmail.getText();
         
         Cliente cliente = new Cliente(id, nome, cpf, data_nasc, telefone, endereco, email);
+        //cliente.setId(id);        
         
         Dados.DadosCliente.getCliente().add(cliente);
+        
         textId.setText("");
         textNome.setText("");
         textCPF.setText("");

@@ -1,7 +1,7 @@
 
 package Model;
 
-public class Funcionarios extends Padrao{
+public class Funcionario extends Padrao{
     private String cpf;
     private String funcao;
     private String data_nasc;
@@ -9,7 +9,11 @@ public class Funcionarios extends Padrao{
     private String email;
     private String endereco;
     
-    public Funcionarios(int id, String nome, String cpf, String funcao, String data_nasc, String telefone, String email, String endereco){
+    public Funcionario(){
+        
+    }
+    
+    public Funcionario(int id, String nome, String cpf, String funcao, String data_nasc, String telefone, String email, String endereco){
         super(id, nome);
         this.setCpf(cpf);
         this.setFuncao(funcao);
@@ -26,7 +30,7 @@ public class Funcionarios extends Padrao{
         this.cpf = cpf;
     }
     
-    public String getFunco(){
+    public String getFuncao(){
         return funcao;
     }
     public void setFuncao(String funcao){

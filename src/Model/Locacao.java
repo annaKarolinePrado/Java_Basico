@@ -7,10 +7,10 @@ public class Locacao  {
     private String data_entrega;
     private String status;
     private double valor;
-    private Funcionarios funcionario;
+    private Funcionario funcionario;
     private Cliente cliente;
     
-    public Locacao(int id, String data_locacao, String data_entrega, String status, double valor, Funcionarios funcionarios, Cliente cliente){
+    public Locacao(int id, String data_locacao, String data_entrega, String status, double valor, Funcionario funcionario, Cliente cliente){
         
         this.setId(id);
         this.setData_locacao(data_locacao);
@@ -56,10 +56,10 @@ public class Locacao  {
         this.valor = valor;
     }
     
-    public Funcionarios getFuncionario(){
+    public Funcionario getFuncionario(){
         return funcionario;
     }
-    public void setFuncionario(Funcionarios funcionario){
+    public void setFuncionario(Funcionario funcionario){
         this.funcionario = funcionario;
     }
     

@@ -58,10 +58,7 @@ abstract public class Padrao implements java.io.Serializable{
             return false;
         }
         return true;
-    }
-    
-    
-    
+    }   
 }
 
 
