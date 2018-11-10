@@ -7,6 +7,10 @@ public class Filme extends Padrao {
     private int quantidade;
     private Categoria categoria;
     
+    public Filme(){
+        
+    }
+    
     public Filme(int id, String nome, String descricao, String data_lanc, int quantidade, Categoria categoria){
         super (id, nome);
         this.setDescricao(descricao);

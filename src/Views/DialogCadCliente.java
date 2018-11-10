@@ -56,7 +56,7 @@ public class DialogCadCliente extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados"));
 
-        jLabel1.setText("ID:");
+        jLabel1.setText("Código:");
 
         jLabel4.setText("Nome:");
 

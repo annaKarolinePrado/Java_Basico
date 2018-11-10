@@ -8,6 +8,10 @@ public class Cliente extends Padrao {
     private String email;
     private String endereco;
     
+    public Cliente(){
+        
+    }
+    
     public Cliente(int id, String nome, String cpf, String data_nasc, String telefone, String email, String endereco){
         super(id, nome);
         this.setCpf(cpf);

@@ -5,13 +5,20 @@ public class Locacao  {
     private int id;
     private String data_locacao;
     private String data_entrega;
-    private String status;
+    private boolean status;
     private double valor;
     private Funcionario funcionario;
     private Cliente cliente;
+    private Filme filme;
+
     
-    public Locacao(int id, String data_locacao, String data_entrega, String status, double valor, Funcionario funcionario, Cliente cliente){
+    
+    public Locacao(){
         
+    }
+    
+    public Locacao(int id, String data_locacao, String data_entrega, boolean status, double valor,
+                    Funcionario funcionario, Cliente cliente, Filme filme){        
         this.setId(id);
         this.setData_locacao(data_locacao);
         this.setData_entrega(data_entrega);
@@ -19,7 +26,8 @@ public class Locacao  {
         this.setValor(valor);
         this.setFuncionario(funcionario);
         this.setCliente(cliente);
-    }
+        this.setFilme(filme);
+    }   
     
     public int getId(){
         return id;
@@ -42,10 +50,10 @@ public class Locacao  {
        this.data_entrega = data_entrega;
     }
     
-    public String getStatus(){
+    public boolean getStatus(){
         return status;
     }
-    public void setStatus(String status){
+    public void setStatus(boolean status){
         this.status = status;
     }
     
@@ -70,6 +78,13 @@ public class Locacao  {
         this.cliente = cliente;
     }
     
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }    
     
     @Override
     public int hashCode() {

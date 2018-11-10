@@ -48,8 +48,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
         textSinopse = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
-        btnProcurar = new javax.swing.JButton();
-        textProcurar = new javax.swing.JTextField();
         comboCategoria = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
@@ -101,13 +99,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
             }
         });
 
-        btnProcurar.setText("Procurar");
-        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcurarActionPerformed(evt);
-            }
-        });
-
         comboCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboCategoriaActionPerformed(evt);
@@ -152,10 +143,7 @@ public class DialogCadFilme extends javax.swing.JDialog {
                                 .addComponent(btnCadastrar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(textProcurar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnProcurar)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -189,9 +177,7 @@ public class DialogCadFilme extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMostrar)
-                    .addComponent(textProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadastrar)
-                    .addComponent(btnProcurar))
+                    .addComponent(btnCadastrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -273,7 +259,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
         textId.setText("");
         textNome.setText("");
         textDtLanc.setText("");
-        textProcurar.setText("");
         textQuant.setText("");
         textDtLanc.setText("");
         textSinopse.setText("");
@@ -304,11 +289,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private void comboCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboCategoriaActionPerformed
-
-    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnProcurarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,7 +336,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnMostrar;
-    private javax.swing.JButton btnProcurar;
     private javax.swing.JComboBox<String> comboCategoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -370,7 +349,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField textDtLanc;
     private javax.swing.JTextField textId;
     private javax.swing.JTextField textNome;
-    private javax.swing.JTextField textProcurar;
     private javax.swing.JTextField textQuant;
     private javax.swing.JTextField textSinopse;
     // End of variables declaration//GEN-END:variables
