@@ -60,6 +60,8 @@ public class DialogCadCliente extends javax.swing.JDialog {
 
         jLabel4.setText("Nome:");
 
+        textId.setEditable(false);
+
         jLabel2.setText("CPF:");
 
         jLabel3.setText("Dt. nascimento:");
@@ -215,11 +217,7 @@ public class DialogCadCliente extends javax.swing.JDialog {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        if(textId.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Campo ID obrigatorio.");
-            textId.requestFocus();
-            return;
-        }        
+               
         if(textNome.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Campo nome obrigatorio");
             textNome.requestFocus();
@@ -251,7 +249,6 @@ public class DialogCadCliente extends javax.swing.JDialog {
             return;
         }
         
-        int id = Integer.parseInt(textId.getText());
         String nome = textNome.getText();
         String cpf = textCPF.getText();
         String data_nasc = textDtNasc.getText();
@@ -259,7 +256,13 @@ public class DialogCadCliente extends javax.swing.JDialog {
         String endereco = textEndereco.getText();
         String email = textEmail.getText();
         
-        Cliente cliente = new Cliente(id, nome, cpf, data_nasc, telefone, endereco, email);
+        int id = 0;        
+        //buscar o maior id
+        for (Cliente cliente :  Dados.DadosCliente.getCliente()) {
+            id = Math.max(id, cliente.getId());
+        }
+        
+        Cliente cliente = new Cliente(id+1, nome, cpf, data_nasc, telefone, endereco, email);
         //cliente.setId(id);        
         
         Dados.DadosCliente.getCliente().add(cliente);
@@ -281,7 +284,7 @@ public class DialogCadCliente extends javax.swing.JDialog {
         areaTexto.append("Código\tNome\t\tCPF\tTelefone\n");
         for (Cliente cliente : Dados.DadosCliente.getCliente()) {
             
-            areaTexto.append(cliente.getId() +"\t"+ cliente.getNome() +"\t"+ cliente.getCpf() +"\t"+ cliente.getTelefone() + "\n");
+            areaTexto.append(cliente.getId() +"\t"+ cliente.getNome() +"\t\t"+ cliente.getCpf() +"\t"+ cliente.getTelefone() + "\n");
         }
     }//GEN-LAST:event_btnMostrarActionPerformed
 

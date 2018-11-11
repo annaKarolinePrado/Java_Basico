@@ -65,6 +65,8 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
 
         jLabel1.setText("ID:");
 
+        textId.setEditable(false);
+
         jLabel2.setText("Nome:");
 
         jLabel3.setText("CPF:");
@@ -237,11 +239,7 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraActionPerformed
-        if(textId.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Campo ID obrigatorio.");
-            textId.requestFocus();
-            return;
-        }
+        
         if(textNome.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Campo Nome obrigatorio.");
             textNome.requestFocus();
@@ -272,9 +270,7 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
             textEndereco.requestFocus();
             return;
         }
-        
-        
-        int id          = Integer.parseInt(textId.getText());
+     
         String nome     = textNome.getText();
         String cpf      = textCpf.getText();
         String dtNasc   = textDtNasc.getText();
@@ -283,7 +279,13 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
         String endereco = textEndereco.getText();       
         String funcao   = comboFuncao.getSelectedItem()+"";
         
-        Funcionario funcionario = new Funcionario(id, nome, cpf, funcao, dtNasc, telefone, email, endereco );
+        int id = 0;        
+        //buscar o maior id
+        for (Funcionario funcionario :  Dados.DadosFuncionario.getFuncionario()) {
+            id = Math.max(id, funcionario.getId());
+        }
+        
+        Funcionario funcionario = new Funcionario(id+1, nome, cpf, funcao, dtNasc, telefone, email, endereco );
         
         Dados.DadosFuncionario.getFuncionario().add(funcionario);
         

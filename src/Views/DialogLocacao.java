@@ -57,7 +57,7 @@ public class DialogLocacao extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         comboFilme = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        textPeriodo = new javax.swing.JTextField();
+        btnPesquisarPeriodo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
 
@@ -66,6 +66,9 @@ public class DialogLocacao extends javax.swing.JDialog {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
 
@@ -121,7 +124,14 @@ public class DialogLocacao extends javax.swing.JDialog {
 
         jLabel8.setText("Filme:");
 
-        jLabel9.setText("Periodo de locação:");
+        jLabel9.setText("Período de locação:");
+
+        btnPesquisarPeriodo.setText("Período");
+        btnPesquisarPeriodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarPeriodoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,9 +177,11 @@ public class DialogLocacao extends javax.swing.JDialog {
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8)
-                            .addComponent(comboFilme, 0, 109, Short.MAX_VALUE)
+                            .addComponent(comboFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(textPeriodo))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnPesquisarPeriodo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -200,7 +212,7 @@ public class DialogLocacao extends javax.swing.JDialog {
                     .addComponent(textDtLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textDtEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPesquisarPeriodo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -260,6 +272,12 @@ public class DialogLocacao extends javax.swing.JDialog {
             textValor.requestFocus();
             return;
         }
+        if( Dados.DadosLocacao.getPeriodo() == 0){
+            JOptionPane.showMessageDialog(null, "O preíodo nao pode ser igual a 0.");
+            btnPesquisarPeriodo.requestFocus();
+            return;
+        }
+        
         
         String dtLocacoes           = textDtLocacao.getText();
         String dtEntrega            = textDtLocacao.getText();
@@ -324,6 +342,15 @@ public class DialogLocacao extends javax.swing.JDialog {
         }       
     }//GEN-LAST:event_formWindowActivated
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnPesquisarPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarPeriodoActionPerformed
+        
+        new DialogPeriodo(null, true).setVisible(true);
+    }//GEN-LAST:event_btnPesquisarPeriodoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -370,6 +397,7 @@ public class DialogLocacao extends javax.swing.JDialog {
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JButton btnCadastra;
     private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnPesquisarPeriodo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> comboCliente;
     private javax.swing.JComboBox<String> comboFilme;
@@ -390,7 +418,6 @@ public class DialogLocacao extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField textDtEntrega;
     private javax.swing.JFormattedTextField textDtLocacao;
     private javax.swing.JTextField textID;
-    private javax.swing.JTextField textPeriodo;
     private javax.swing.JTextField textValor;
     // End of variables declaration//GEN-END:variables
 }

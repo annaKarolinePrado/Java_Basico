@@ -69,6 +69,8 @@ public class DialogCadFilme extends javax.swing.JDialog {
 
         jLabel1.setText("ID:");
 
+        textId.setEditable(false);
+
         jLabel2.setText("Nome:");
 
         jLabel3.setText("Dt. lançamento:");
@@ -142,8 +144,7 @@ public class DialogCadFilme extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -212,11 +213,6 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
         
-        if(textId.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Campo ID obrigatório.");
-            textId.requestFocus();
-            return;
-        }
         if(textNome.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Campo Nome obrigatório.");
             textNome.requestFocus();
@@ -237,13 +233,17 @@ public class DialogCadFilme extends javax.swing.JDialog {
            textSinopse.requestFocus();
            return;
         }
-        
-        
-        int id              = Integer.parseInt(textId.getText());
+      
         String nome         = textNome.getText();
         String snopse       = textSinopse.getText();
         String data_lanc    = textDtLanc.getText();
         int quant           = Integer.parseInt(textQuant.getText());
+        
+        int id = 0;        
+        //buscar o maior id
+        for (Filme filme :  Dados.DadosFilme.getFilme()) {
+            id = Math.max(id, filme.getId());
+        }
         
         Categoria cat = new Categoria();        
         for (Categoria categoria : DadosCategoria.getCategoria()) {
@@ -252,7 +252,7 @@ public class DialogCadFilme extends javax.swing.JDialog {
             }            
         }    
         
-        Filme filme = new Filme(id, nome, snopse, data_lanc, quant, cat);
+        Filme filme = new Filme(id+1, nome, snopse, data_lanc, quant, cat);
         
         Dados.DadosFilme.getFilme().add(filme);
         
