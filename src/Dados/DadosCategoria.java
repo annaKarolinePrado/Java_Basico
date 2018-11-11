@@ -4,7 +4,7 @@ package Dados;
 import Model.Categoria;
 import java.util.LinkedList;
 
-public class DadosCategoria {
+abstract public class DadosCategoria {
     private static LinkedList<Categoria> listaCategoria = new LinkedList<>();
     
     public DadosCategoria(){

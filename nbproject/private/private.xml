@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Java/Locadora/Locadora/src/Views/DialogLocacao.java</file>
-            <file>file:/C:/Java/Locadora/Locadora/src/Dados/DadosLocacao.java</file>
-            <file>file:/C:/Java/Locadora/Locadora/src/Model/Locacao.java</file>
+            <file>file:/C:/Java/Locadora/Locadora/src/Views/DialogCadCliente.java</file>
+            <file>file:/C:/Java/Locadora/Locadora/src/Views/FrameMenu.java</file>
+            <file>file:/C:/Java/Locadora/Locadora/src/Views/DialogPesquisaFilme.java</file>
             <file>file:/C:/Java/Locadora/Locadora/src/Views/DialogCadCategoria.java</file>
+            <file>file:/C:/Java/Locadora/Locadora/src/Views/DialogCadFilme.java</file>
         </group>
     </open-files>
 </project-private>

@@ -4,7 +4,7 @@ package Dados;
 import Model.Funcionario;
 import java.util.LinkedList;
 
-public class DadosFuncionario {
+abstract public class DadosFuncionario {
     
     private static LinkedList<Funcionario> listaFuncionarios = new LinkedList<>();
     

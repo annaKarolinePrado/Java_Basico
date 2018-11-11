@@ -56,6 +56,8 @@ public class DialogLocacao extends javax.swing.JDialog {
         comboFuncionario = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         comboFilme = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        textPeriodo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
 
@@ -119,6 +121,8 @@ public class DialogLocacao extends javax.swing.JDialog {
 
         jLabel8.setText("Filme:");
 
+        jLabel9.setText("Periodo de locação:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,9 +165,11 @@ public class DialogLocacao extends javax.swing.JDialog {
                             .addComponent(jLabel7)
                             .addComponent(comboFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8)
-                            .addComponent(comboFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(comboFilme, 0, 109, Short.MAX_VALUE)
+                            .addComponent(jLabel9)
+                            .addComponent(textPeriodo))))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -187,12 +193,14 @@ public class DialogLocacao extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textDtLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textDtEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -374,6 +382,7 @@ public class DialogLocacao extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton radioPago;
@@ -381,6 +390,7 @@ public class DialogLocacao extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField textDtEntrega;
     private javax.swing.JFormattedTextField textDtLocacao;
     private javax.swing.JTextField textID;
+    private javax.swing.JTextField textPeriodo;
     private javax.swing.JTextField textValor;
     // End of variables declaration//GEN-END:variables
 }

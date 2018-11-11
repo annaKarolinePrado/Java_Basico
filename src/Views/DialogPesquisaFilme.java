@@ -139,51 +139,47 @@ public class DialogPesquisaFilme extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        LinkedList<Filme> listaTodosFilmes  = Dados.DadosFilme.getFilme();
-        int filtro = 0;
-        try {
-            filtro = Integer.parseInt(textCodigo.getText());
-        } catch (Exception ex) {
-            System.out.println("tratamento de execess~~ao do código");
-        }
-        
-        //pesquisar por codigo
-        LinkedList<Filme> filtraPorCodigos = new LinkedList<>();
-        for (Filme listaTodosFilme : listaTodosFilmes) {
-            if(!textCodigo.getText().trim().isEmpty()){                
-                if(listaTodosFilme.getId() == filtro){
-                    filtraPorCodigos.add(listaTodosFilme);
+        try{        
+            LinkedList<Filme> listaTodosFilmes  = Dados.DadosFilme.getFilme();
+            int filtro = textCodigo.getText().trim().isEmpty() ? 0 :Integer.parseInt(textCodigo.getText());        
+            //pesquisar por codigo
+            LinkedList<Filme> filtraPorCodigos = new LinkedList<>();
+            for (Filme listaTodosFilme : listaTodosFilmes) {
+                if(!textCodigo.getText().trim().isEmpty()){                
+                    if(listaTodosFilme.getId() == filtro){
+                        filtraPorCodigos.add(listaTodosFilme);
+                    }
+                }else{
+                    filtraPorCodigos.add(listaTodosFilme); 
                 }
-            }else{
-                filtraPorCodigos.add(listaTodosFilme); 
             }
-        }
-        //filtra por nome
-        LinkedList<Filme> filtraPorNomes = new LinkedList<>();
-        for (Filme filtraPorCodigo : filtraPorCodigos) {
-            if(!textNome.getText().trim().isEmpty()){                
-                if(filtraPorCodigo.getNome().contains(textNome.getText())){
-                    System.out.println(filtraPorCodigo.getNome()+"teste");
+            //filtra por nome
+            LinkedList<Filme> filtraPorNomes = new LinkedList<>();
+            for (Filme filtraPorCodigo : filtraPorCodigos) {
+                if(!textNome.getText().trim().isEmpty()){                
+                    if(filtraPorCodigo.getNome().contains(textNome.getText())){
+                        System.out.println(filtraPorCodigo.getNome()+"teste");
+                        filtraPorNomes.add(filtraPorCodigo); 
+                    }
+                }else{
                     filtraPorNomes.add(filtraPorCodigo); 
                 }
-            }else{
-                filtraPorNomes.add(filtraPorCodigo); 
             }
-        }
-        //filtra por categoria
-        LinkedList<Filme> filtraPorCategorias = new LinkedList<>();
-        for (Filme filtraPorNome : filtraPorNomes) {
-                          
-                if(filtraPorNome.getCategoria().getNome() == (comboCategoria.getSelectedItem())){
-                    filtraPorCategorias.add(filtraPorNome); 
-                }           
-        }
-        areaTexto.setText("");
-        for (Filme filme : filtraPorCategorias) {
-            areaTexto.append(filme.getId()+ "\t" +filme.getNome() + " - " + filme.getCategoria().getNome() + "\n");
-        }
-        
-        
+            //filtra por categoria
+            LinkedList<Filme> filtraPorCategorias = new LinkedList<>();
+            for (Filme filtraPorNome : filtraPorNomes) {
+
+                    if(filtraPorNome.getCategoria().getNome() == (comboCategoria.getSelectedItem())){
+                        filtraPorCategorias.add(filtraPorNome); 
+                    }           
+            }
+            areaTexto.setText("");
+            for (Filme filme : filtraPorCategorias) {
+                areaTexto.append(filme.getId()+ "\t" +filme.getNome() + " - " + filme.getCategoria().getNome() + "\n");
+            }
+        }catch(NumberFormatException ex){
+            System.out.println("Erro ao digitar o código." + ex.getMessage());
+        }        
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

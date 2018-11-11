@@ -4,7 +4,7 @@ package Dados;
 import Model.Cliente;
 import java.util.LinkedList;
 
-public class DadosCliente {
+abstract public class DadosCliente {
     private static LinkedList<Cliente> listaCliente = new LinkedList<>();
     
     public DadosCliente(){

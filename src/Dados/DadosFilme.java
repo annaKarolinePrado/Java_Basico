@@ -4,7 +4,7 @@ package Dados;
 import Model.Filme;
 import java.util.LinkedList;
 
-public class DadosFilme {
+abstract public class DadosFilme {
     private static LinkedList<Filme> listaFilme = new LinkedList<>();
     
     public DadosFilme(){
