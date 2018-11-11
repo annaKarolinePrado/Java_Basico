@@ -43,6 +43,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
@@ -124,6 +125,14 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem8);
 
+        jMenuItem9.setText("Funcionario");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem9);
+
         jMenuItem6.setText("Filme");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +195,11 @@ public class FrameMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        new DialogPesquisaFuncionario(this, true).setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,5 +253,6 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
