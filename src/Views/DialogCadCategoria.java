@@ -180,7 +180,7 @@ public class DialogCadCategoria extends javax.swing.JDialog {
         for (Categoria cat :  Dados.DadosCategoria.getCategoria()) {
             id = Math.max(id, cat.getId());
         }
-        String nome = textNome.getText();
+        String nome = textNome.getText().toUpperCase();
         boolean status = radioAtivo.isSelected()? true : false;
         
         Categoria categoria = new Categoria(id+1, nome, status);
