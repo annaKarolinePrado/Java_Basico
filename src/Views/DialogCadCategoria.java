@@ -14,50 +14,7 @@ import javax.swing.JOptionPane;
  * @author karol
  */
 public class DialogCadCategoria extends javax.swing.JDialog {
-    public LinkedList<Categoria> filtraPorCodigos(LinkedList<Categoria> categoriaFiltros){
-        int filtro = 0;
-        try {
-            filtro = Integer.parseInt(textProcurar.getText());
-        } catch (Exception ex) {
-            if(radioCodigo.isSelected()){
-                if(!textProcurar.getText().trim().isEmpty()){
-                    JOptionPane.showMessageDialog(null,"Código invalido");  
-                }
-            }
-        }
-        LinkedList<Categoria> filtraCodigos = new LinkedList<>();
-        for (Categoria categoriaFiltro : categoriaFiltros) {
-            if(radioCodigo.isSelected()){                
-                if(categoriaFiltro.getId() == filtro){
-                    filtraCodigos.add(categoriaFiltro);
-                }
-                if(textProcurar.getText().trim().isEmpty()){
-                    filtraCodigos.add(categoriaFiltro); 
-                }
-            }else{
-                filtraCodigos.add(categoriaFiltro); 
-            }
-               
-                        
-        }
-        return filtraCodigos;
-    }
-    public LinkedList<Categoria> filtraPorNomes(LinkedList<Categoria> categoriaFiltros){
-        String filtro = textProcurar.getText();
-        
-        LinkedList<Categoria> filtraNomes = new LinkedList<>();
-        for (Categoria categoriaFiltro : categoriaFiltros) {
-            System.err.println(categoriaFiltro.getNome());
-            if((filtro != "")&& (radioNome.isSelected())){
-                if(categoriaFiltro.getNome().contains(filtro)){
-                    filtraNomes.add(categoriaFiltro);
-                }
-            }else{
-                filtraNomes.add(categoriaFiltro);
-            }
-        }
-        return filtraNomes;
-    }
+    
     /**
      * Creates new form DialogCadCategoria
      */
@@ -87,10 +44,6 @@ public class DialogCadCategoria extends javax.swing.JDialog {
         radioInativo = new javax.swing.JRadioButton();
         btnCadastra = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
-        btnProcurar = new javax.swing.JButton();
-        textProcurar = new javax.swing.JTextField();
-        radioCodigo = new javax.swing.JRadioButton();
-        radioNome = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
 
@@ -99,11 +52,11 @@ public class DialogCadCategoria extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro"));
 
-        jLabel1.setText("Código");
+        jLabel1.setText("Código:");
 
-        jLabel2.setText("Nome");
+        jLabel2.setText("Nome:");
 
-        jLabel3.setText("Status");
+        jLabel3.setText("Status:");
 
         textId.setEditable(false);
 
@@ -134,20 +87,6 @@ public class DialogCadCategoria extends javax.swing.JDialog {
             }
         });
 
-        btnProcurar.setText("Procurar");
-        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcurarActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(radioCodigo);
-        radioCodigo.setText("Cód");
-
-        buttonGroup2.add(radioNome);
-        radioNome.setSelected(true);
-        radioNome.setText("Nome");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -155,15 +94,17 @@ public class DialogCadCategoria extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastra))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel2)
+                            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -171,23 +112,8 @@ public class DialogCadCategoria extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(radioAtivo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(radioInativo))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnCadastra)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(radioCodigo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioNome))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 3, Short.MAX_VALUE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                                .addComponent(radioInativo)))))
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,16 +129,10 @@ public class DialogCadCategoria extends javax.swing.JDialog {
                     .addComponent(radioAtivo)
                     .addComponent(radioInativo)
                     .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioCodigo)
-                    .addComponent(radioNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastra)
-                    .addComponent(btnMostrar)
-                    .addComponent(textProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProcurar))
+                    .addComponent(btnMostrar))
                 .addGap(18, 18, Short.MAX_VALUE))
         );
 
@@ -237,7 +157,7 @@ public class DialogCadCategoria extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
@@ -281,26 +201,6 @@ public class DialogCadCategoria extends javax.swing.JDialog {
         }        
     }//GEN-LAST:event_btnMostrarActionPerformed
     
-    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-        // TODO add your handling code here:
-        String filtro = textProcurar.getText().trim().isEmpty() ? "":textProcurar.getText().toUpperCase();
-        //todas categorias
-        LinkedList<Categoria> filtroCategorias  = Dados.DadosCategoria.getCategoria();
-        //filtra por codigo
-        LinkedList<Categoria> fitraPorCodigos   = this.filtraPorCodigos(filtroCategorias);        
-        //filtra por nome
-        LinkedList<Categoria> fitraPorNomes     = this.filtraPorNomes(fitraPorCodigos);
-        
-        
-        //lista final
-        //-------deve receber sempre a ultima lista-------        
-        areaTexto.setText("");
-        for (Categoria categoria : fitraPorNomes) {
-            areaTexto.append(categoria.getNome() + "\t"+categoria.getId()+ "-" + (categoria.getStatus()?"Ativo":"Inativo")+"\n");
-        }
-        
-    }//GEN-LAST:event_btnProcurarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -347,7 +247,6 @@ public class DialogCadCategoria extends javax.swing.JDialog {
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JButton btnCadastra;
     private javax.swing.JButton btnMostrar;
-    private javax.swing.JButton btnProcurar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
@@ -356,11 +255,8 @@ public class DialogCadCategoria extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton radioAtivo;
-    private javax.swing.JRadioButton radioCodigo;
     private javax.swing.JRadioButton radioInativo;
-    private javax.swing.JRadioButton radioNome;
     private javax.swing.JTextField textId;
     private javax.swing.JTextField textNome;
-    private javax.swing.JTextField textProcurar;
     // End of variables declaration//GEN-END:variables
 }
