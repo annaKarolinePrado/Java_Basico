@@ -164,6 +164,7 @@ public class DialogCadCategoria extends javax.swing.JDialog {
                         .addComponent(textEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        areaTexto.setEditable(false);
         areaTexto.setColumns(20);
         areaTexto.setRows(5);
         jScrollPane1.setViewportView(areaTexto);

@@ -210,6 +210,7 @@ public class DialogCadCliente extends javax.swing.JDialog {
                 .addGap(15, 15, 15))
         );
 
+        areaTexto.setEditable(false);
         areaTexto.setColumns(20);
         areaTexto.setRows(5);
         jScrollPane1.setViewportView(areaTexto);
