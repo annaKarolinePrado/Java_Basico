@@ -40,7 +40,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="164" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -63,23 +63,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnCadastra" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnMostra" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="textProcurar" min="-2" pref="225" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnProcurar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="textId" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="textCpf" alignment="1" pref="109" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCpf" alignment="1" min="-2" pref="109" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="textDtNasc" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -95,23 +85,42 @@
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <Component id="comboFuncao" min="-2" pref="109" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace pref="27" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="textNome" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="textId" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="textNome" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnCadastra" max="32767" attributes="0"/>
+                              <Component id="btnMostra" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="textEmail" min="-2" pref="236" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="textEndereco" min="-2" pref="236" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="textEmail" min="-2" pref="236" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="textEndereco" min="-2" pref="236" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -127,6 +136,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="textId" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="textNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCadastra" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -141,6 +151,7 @@
                       <Component id="textCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="textTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="comboFuncao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMostra" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -152,13 +163,6 @@
                       <Component id="textEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="textEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnCadastra" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnMostra" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textProcurar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnProcurar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -167,7 +171,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ID:"/>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textId">
@@ -267,16 +271,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostraActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnProcurar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Procurar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcurarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textProcurar">
         </Component>
       </SubComponents>
     </Container>

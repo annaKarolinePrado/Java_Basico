@@ -53,8 +53,6 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
         textEndereco = new javax.swing.JTextField();
         btnCadastra = new javax.swing.JButton();
         btnMostra = new javax.swing.JButton();
-        btnProcurar = new javax.swing.JButton();
-        textProcurar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
 
@@ -63,7 +61,7 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro"));
 
-        jLabel1.setText("ID:");
+        jLabel1.setText("Código:");
 
         textId.setEditable(false);
 
@@ -115,13 +113,6 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
             }
         });
 
-        btnProcurar.setText("Procurar");
-        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcurarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,21 +121,12 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnCadastra)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostra)
-                        .addGap(18, 18, 18)
-                        .addComponent(textProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnProcurar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textId, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(textCpf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(textCpf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textDtNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5))
@@ -156,18 +138,31 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(comboFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(textNome)))
+                                    .addComponent(comboFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(textNome)
+                                        .addGap(27, 27, 27)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCadastra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMostra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(113, 113, 113)
-                        .addComponent(jLabel2))
-                    .addComponent(jLabel7)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(textEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +174,8 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -191,7 +187,8 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                     .addComponent(textDtNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -200,12 +197,6 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastra)
-                    .addComponent(btnMostra)
-                    .addComponent(textProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProcurar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -230,7 +221,7 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
@@ -301,37 +292,13 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
     private void btnMostraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostraActionPerformed
         areaTexto.setText("");
         
-        areaTexto.append("ID\t\tNome\t\tFunção\t\tTelefone\n");
+        areaTexto.append("ID\tNome\t\tFunção\t\tTelefone\n");
         for (Funcionario funcionario : Dados.DadosFuncionario.getFuncionario()) {
             areaTexto.append(funcionario.getId() + "\t" + funcionario.getNome() + "\t" + funcionario.getFuncao()+ "\t" +
                              funcionario.getTelefone() + "\n" );
         }
         
     }//GEN-LAST:event_btnMostraActionPerformed
-
-    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-        // TODO add your handling code here:
-        String filtro = textProcurar.getText().trim().isEmpty() ? "":textProcurar.getText().toUpperCase();
-        
-        LinkedList<Funcionario> funcionarioFiltro = new LinkedList<>();
-        for (Funcionario funcionario : Dados.DadosFuncionario.getFuncionario()) {
-            if (filtro != ""){
-                 //filtro por cpf ou nome
-                if (funcionario.getCpf().equals(filtro) || funcionario.getNome().contains(filtro)){
-                    funcionarioFiltro.add(funcionario);
-                }            
-            }else{
-                funcionarioFiltro.add(funcionario);
-            }           
-        }
-        //mostra na area texto
-        areaTexto.setText("");
-        for (Funcionario funcionario : funcionarioFiltro) {
-            areaTexto.append(funcionario.getNome());
-        }
-        
-        
-    }//GEN-LAST:event_btnProcurarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,7 +346,6 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JButton btnCadastra;
     private javax.swing.JButton btnMostra;
-    private javax.swing.JButton btnProcurar;
     private javax.swing.JComboBox<String> comboFuncao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -397,7 +363,6 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
     private javax.swing.JTextField textEndereco;
     private javax.swing.JTextField textId;
     private javax.swing.JTextField textNome;
-    private javax.swing.JTextField textProcurar;
     private javax.swing.JFormattedTextField textTelefone;
     // End of variables declaration//GEN-END:variables
 }
