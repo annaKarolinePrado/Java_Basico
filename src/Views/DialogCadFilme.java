@@ -8,6 +8,8 @@ package Views;
 import Dados.DadosCategoria;
 import Model.Categoria;
 import Model.Filme;
+import java.util.Vector;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -49,6 +51,9 @@ public class DialogCadFilme extends javax.swing.JDialog {
         btnCadastrar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         comboCategoria = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        textEditar = new javax.swing.JTextField();
+        btnEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
 
@@ -107,6 +112,21 @@ public class DialogCadFilme extends javax.swing.JDialog {
             }
         });
 
+        jLabel7.setText("Digite um código para edição:");
+
+        textEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                textEditarMouseExited(evt);
+            }
+        });
+
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -114,42 +134,47 @@ public class DialogCadFilme extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(comboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(68, 68, 68)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textDtLanc, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(textQuant, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(47, 47, 47))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(textId, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGap(26, 26, 26)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(399, 399, 399))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(textNome)
+                                    .addGap(47, 47, 47)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(comboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textDtLanc, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(textQuant, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(47, 47, 47))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(textId, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(26, 26, 26)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(399, 399, 399))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(textNome)
-                                        .addGap(47, 47, 47)))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
-                        .addGap(39, 39, 39))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(textSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jLabel6)
+                                .addGap(419, 419, 419))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7))
+                            .addComponent(textSinopse))
+                        .addGap(47, 47, 47)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,10 +203,19 @@ public class DialogCadFilme extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnEditar)))
+                .addContainerGap())
         );
 
         areaTexto.setColumns(20);
@@ -202,9 +236,9 @@ public class DialogCadFilme extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -240,21 +274,21 @@ public class DialogCadFilme extends javax.swing.JDialog {
         String snopse       = textSinopse.getText();
         String data_lanc    = textDtLanc.getText();
         int quant           = Integer.parseInt(textQuant.getText());
-        
+        Categoria categoria       = (Categoria)comboCategoria.getSelectedItem();
         int id = 0;        
         //buscar o maior id
         for (Filme filme :  Dados.DadosFilme.getFilme()) {
             id = Math.max(id, filme.getId());
         }
-        
+        /*
         Categoria cat = new Categoria();        
         for (Categoria categoria : DadosCategoria.getCategoria()) {
             if (categoria.getNome() == comboCategoria.getSelectedItem()){
                 cat = categoria;
             }            
-        }    
+        }   */ 
         
-        Filme filme = new Filme(id+1, nome, snopse, data_lanc, quant, cat);
+        Filme filme = new Filme(id+1, nome, snopse, data_lanc, quant, categoria);
         
         Dados.DadosFilme.getFilme().add(filme);
         
@@ -274,9 +308,9 @@ public class DialogCadFilme extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        for (Categoria categoria : DadosCategoria.getCategoria()){           
-            comboCategoria.addItem(categoria.getNome());            
-        }
+      
+        DefaultComboBoxModel cbm = new DefaultComboBoxModel( new Vector(DadosCategoria.getCategoria()));
+        comboCategoria.setModel(cbm); 
     }//GEN-LAST:event_formWindowActivated
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
@@ -291,6 +325,61 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private void comboCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboCategoriaActionPerformed
+
+    private void textEditarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textEditarMouseExited
+        
+        try {
+            int codigo = Integer.parseInt(textEditar.getText());
+            for (Filme filme : Dados.DadosFilme.getFilme()) {
+                if(filme.getId() == codigo){
+                    textId.setText(filme.getId() + "");
+                    textNome.setText(filme.getNome());
+                    textDtLanc.setText(filme.getData_lanc());
+                    textQuant.setText(filme.getQuantidade() + "");
+                    textSinopse.setText(filme.getDescricao());                     
+                    comboCategoria.setSelectedItem((Categoria)filme.getCategoria());
+                }
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null,"Código invalido.");
+            textEditar.requestFocus();
+            return;
+        }
+    }//GEN-LAST:event_textEditarMouseExited
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        try {
+            int id = Integer.parseInt(textId.getText());
+            if(textId.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Informe um código para edição");
+                textEditar.requestFocus();
+                return;
+            }else{
+                for (Filme filme : Dados.DadosFilme.getFilme()) {
+                    if(filme.getId()== id){
+                        filme.setId(id);
+                        filme.setNome(textNome.getText());
+                        filme.setData_lanc(textDtLanc.getText());
+                        filme.setQuantidade( Integer.parseInt(textQuant.getText()));
+                        filme.setDescricao(textSinopse.getText());
+                        filme.setCategoria((Categoria)comboCategoria.getSelectedItem());
+                    }
+                }
+            }
+            textId.setText("");
+            textNome.setText("");
+            textDtLanc.setText("");
+            textQuant.setText("");
+            textDtLanc.setText("");
+            textSinopse.setText("");
+            textEditar.setText("");
+            
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null,"Código invalido.");
+            textEditar.requestFocus();
+            return;
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,6 +426,7 @@ public class DialogCadFilme extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JComboBox<String> comboCategoria;
     private javax.swing.JLabel jLabel1;
@@ -345,10 +435,12 @@ public class DialogCadFilme extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JFormattedTextField textDtLanc;
+    private javax.swing.JTextField textEditar;
     private javax.swing.JTextField textId;
     private javax.swing.JTextField textNome;
     private javax.swing.JTextField textQuant;
