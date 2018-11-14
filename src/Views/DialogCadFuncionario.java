@@ -333,7 +333,7 @@ public class DialogCadFuncionario extends javax.swing.JDialog {
         
         areaTexto.append("ID\tNome\t\tFunção\t\tTelefone\n");
         for (Funcionario funcionario : Dados.DadosFuncionario.getFuncionario()) {
-            areaTexto.append(funcionario.getId() + "\t" + funcionario.getNome() + "\t" + funcionario.getFuncao()+ "\t" +
+            areaTexto.append(funcionario.getId() + "\t" + funcionario.getNome() + "\t\t" + funcionario.getFuncao()+ "\t" +
                              funcionario.getTelefone() + "\n" );
         }
         
