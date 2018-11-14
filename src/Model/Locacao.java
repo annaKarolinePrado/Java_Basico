@@ -1,10 +1,12 @@
 
 package Model;
 
+import java.util.Date;
+
 public class Locacao  {
     private int id;
-    private String data_locacao;
-    private String data_entrega;
+    private Date data_locacao;
+    private Date data_entrega;
     private boolean status;
     private double valor;
     private Funcionario funcionario;
@@ -17,7 +19,7 @@ public class Locacao  {
         
     }
     
-    public Locacao(int id, String data_locacao, String data_entrega, boolean status, double valor,
+    public Locacao(int id, Date data_locacao, Date data_entrega, boolean status, double valor,
                     Funcionario funcionario, Cliente cliente, Filme filme){        
         this.setId(id);
         this.setData_locacao(data_locacao);
@@ -36,17 +38,17 @@ public class Locacao  {
         this.id = id;
     }
     
-    public String getData_locacao(){
+    public Date getData_locacao(){
         return data_locacao;
     }
-    public void setData_locacao(String data_locacao){
+    public void setData_locacao(Date data_locacao){
         this.data_locacao = data_locacao;
     }
     
-    public String getData_entrega(){
+    public Date getData_entrega(){
         return data_entrega;
     }
-    public void setData_entrega(String data_entrega){
+    public void setData_entrega(Date data_entrega){
        this.data_entrega = data_entrega;
     }
     

@@ -10,6 +10,11 @@ import Model.Cliente;
 import Model.Filme;
 import Model.Funcionario;
 import Model.Locacao;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +22,7 @@ import javax.swing.JOptionPane;
  * @author karol
  */
 public class DialogLocacao extends javax.swing.JDialog {
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 
     /**
      * Creates new form DialogLocacao
@@ -279,15 +285,11 @@ public class DialogLocacao extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "O preíodo nao pode ser igual a 0.");
             btnPesquisarPeriodo.requestFocus();
             return;
-        }
+        }  
         
-        
-        String dtLocacoes           = textDtLocacao.getText();
-        String dtEntrega            = textDtLocacao.getText();
         double valor                = Double.parseDouble(textValor.getText());
         boolean status              = radioPago.isSelected()? true : false;
-        
-        
+             
         Cliente cliente = new Cliente();        
         for (Cliente cli : Dados.DadosCliente.getCliente()) {
             if (cli.getNome() == comboCliente.getSelectedItem()){
@@ -315,8 +317,22 @@ public class DialogLocacao extends javax.swing.JDialog {
             id = Math.max(id, loc.getId());
         }
         
-        Locacao locacao = new Locacao(id+1,  dtLocacoes, dtEntrega, status, valor, funcionario, cliente, filme);
-        Dados.DadosLocacao.getLocacao().add(locacao);
+         
+            try {
+                Locacao locacao = new Locacao(id+1,
+                    formatador.parse(textDtLocacao.getText()),
+                    formatador.parse(textDtEntrega.getText()),
+                    status, 
+                    valor, 
+                    funcionario, 
+                    cliente, 
+                    filme
+                );
+                Dados.DadosLocacao.getLocacao().add(locacao);
+            } catch (ParseException ex) {
+                System.out.println("Erro na conversão da data. " + ex.getMessage());
+            }
+        
         
     }//GEN-LAST:event_btnCadastraActionPerformed
 
@@ -324,8 +340,11 @@ public class DialogLocacao extends javax.swing.JDialog {
         areaTexto.setText("");
         areaTexto.append("Cliente\tDt Locação\tDt Entrega\tValor\tFilme locado\n");
         for (Locacao locacao : Dados.DadosLocacao.getLocacao()) {
-            areaTexto.append(locacao.getCliente() +"\t"+ locacao.getData_locacao() +"\t"+ locacao.getData_entrega() +"\t"+ 
-                             locacao.getValor() +"\t"+ locacao.getFilme().getCategoria().getNome() + " - " +
+            areaTexto.append(locacao.getCliente() +"\t"+ 
+                             formatador.format(locacao.getData_locacao()) +"\t"+
+                             formatador.format(locacao.getData_entrega()) +"\t"+ 
+                             locacao.getValor() +"\t"+
+                             locacao.getFilme().getCategoria().getNome() + " - " +
                              locacao.getFilme() +"\n");            
         }        
     }//GEN-LAST:event_btnMostrarActionPerformed
