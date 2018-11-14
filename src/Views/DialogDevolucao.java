@@ -243,7 +243,7 @@ public class DialogDevolucao extends javax.swing.JDialog {
                 textQuantidade.setText(locacao.getFilme().getQuantidade() + "");
                 textValor.setText(locacao.getValor() + "");
                 
-                if(data.after(locacao.getData_locacao())){
+                if(data.before(locacao.getData_entrega())){
                     textValor.setText(locacao.getValor() + 10 + "");
                 }
             }
